@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<html type=en>
-<head>
-<meta charset="utf-8">
-<script src="http://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
-	<title>Search for a Movie</title>
-</head>
-<body>
-	<form id="gif-form">
-		<fieldset>
-			<legend>Pick a Movie</legend>
-				<input id="gif-entry" type="text">
-				<button id="gif-submit" type="submit">Submit</button>
-		</fieldset>
-	</form>
-	
-	<div id= "gif-output">
-		<ul id= "gif-list" class="gif-list">
-	
-		</ul>
-	</div>
-	
-	<script>
-
-		$(document).ready(function(){
+$(document).ready(function(){
 
 			$("#gif-submit").on("click", function(event){
 				event.preventDefault();
@@ -64,8 +38,3 @@
 
 
 	});
-	</script>
-
-</body>
-</html>
-
