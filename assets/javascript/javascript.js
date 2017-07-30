@@ -2,14 +2,24 @@ var farmAnimals = ["Pig", "Cow", "Chicken", "Horse", "Goat", "Sheep", "Turkey", 
 $(document).ready(function() {
 
     
-
-    // $("#addAnimal").on("click", function(event) {
-    //     event.preventDefault();
+	function showButtonAnimals(){
+     $("#buttonArea").on("click", function(event) {
+        //event.preventDefault();
+        var farmAnimals = ["Pig", "Cow", "Chicken", "Horse", "Goat", "Sheep", "Turkey", "Rooster", "Duck", "Dog"];
+        for (var i = 0; i < farmAnimals.length; i++)  {
+       		var farmAnimals = $("#farmAnimalEntry").val() ;
+       		console.log(farmAnimalEntry);
+       		console.log(farmAnimals[i]);
+    	}
+    	console.log("#farmAnimalEntry");
+        showFarmAnimals();
+    	});
+    };
 
 
     function showFarmAnimals(){
         var searchTerm = $("#farmAnimalEntry").val();
-        //var searchTerm = $(this).attr("data-name");
+        //var searchTerm = $("#buttonArea").attr("data-name");
 
         var apiKey = "ae0b9e17b4d84cb8bdff9a172d556c2c";
         var limit = 10;
@@ -25,7 +35,7 @@ $(document).ready(function() {
 
             displaySearch(response);
             console.log("showFarmAnimals")
-            createButton()
+           // createButton()
         });
     }
 
@@ -83,7 +93,7 @@ $(document).ready(function() {
      // 	}
      // })
 
-    $(document).on("click", "#buttonArea", showFarmAnimals);
+    $(document).on("click", "#buttonArea", showButtonAnimals);
 
 createButton();
 });
