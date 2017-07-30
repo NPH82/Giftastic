@@ -1,71 +1,30 @@
 <!DOCTYPE html>
 <html type=en>
+
 <head>
-<meta charset="utf-8">
-<script src="http://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
-	<title>Search for a Movie</title>
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript.js"></script>
+    <title>E-I-E-I-O</title>
 </head>
+
 <body>
-	<form id="gif-form">
-		<fieldset>
-			<legend>Pick a Movie</legend>
-				<input id="gif-entry" type="text">
-				<button id="gif-submit" type="submit">Submit</button>
-		</fieldset>
-	</form>
-	
-	<div id= "gif-output">
-		<ul id= "gif-list" class="gif-list">
-	
-		</ul>
-	</div>
-	
-	<script>
-
-		$(document).ready(function(){
-
-			$("#gif-submit").on("click", function(event){
-				event.preventDefault();
-
-			var searchTerm = $("#gif-entry").val();
-
-			var apiKey = "e0bdabd1805e4798afae162920201534";
-			var protocol = "https://";
-			var domain = "api.giphy.com";
-			var path = "/v1/gifs/search";
-			var limit = 10;
-			
-
-
-			var url = protocol + domain + path + "?" + "api_key=" + apiKey + "&q=" + searchTerm + "&limit=" + limit;
-
-			$.ajax ({
-				url: url,
-				method: "GET"
-			}).done(function(response) {
-
-				displaySearch(response);
-			});
-		});
-
-		function displaySearch(response){
-			var returnedItems = (response).data;
-
-				for(var i=0; i < returnedItems.length; i++) {
-					var itemLimit = returnedItems[i].images.fixed_height_still.url;
-					var rating = returnedItems[i].rating;
-
-					$("#gif-list").append("<li><img src=" + itemLimit + "></img></li>");
-					$("#gif-list").append("<li>" + rating + "</li");
-				}
-			}
-
-
-	});
-	</script>
-
+    <div class="container">
+        <!--new buttons-->
+        <div id="buttonArea"></div>
+        <form id="farmAnimal-form">
+            <fieldset>
+                <legend>Old MacDonald had a Farm e-i-e-i-o!! What other animals are on the farm?</legend>
+                <input id="farmAnimalEntry" type="text">
+                <button id="addAnimal" type="submit">Submit</button>
+            </fieldset>
+        </form>
+        <div id="farmAnimalOutput">
+            <ul id="farmAnimallist">
+                <!--gifs go here-->
+            </ul>
+        </div>
+    </div>
 </body>
-</html>
 
+</html>
