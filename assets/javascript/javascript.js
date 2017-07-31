@@ -31,6 +31,8 @@ $(document).ready(function() {
         var limit = 10;
 
         var url = "https://api.giphy.com/v1/gifs/search?" + "api_key=" + apiKey + "&q=" + searchAnimal + "&limit=" + limit;
+
+        
         console.log(searchAnimal);
 
 

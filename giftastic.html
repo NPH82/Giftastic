@@ -21,9 +21,7 @@
             </fieldset>
         </form>
         <div id="farmAnimalOutput">
-            <ul id="farmAnimallist">
-                <!--gifs go here-->
-            </ul>
+                <!--gifs go here-->   
         </div>
 
        	<script type="text/javascript">
@@ -36,13 +34,32 @@
        		var farmAnimal = $(this).attr("data-name");
        		 		apiKey = "ae0b9e17b4d84cb8bdff9a172d556c2c";
        		 		limit = 10;
-       			 	URL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + farmAnimal + "&limit" + limit;
+       			 	URL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + farmAnimal + "&limit=" + limit;
        	 	
 						$.ajax({
        	 		url: URL,
        			method: "GET"
        	 	}).done(function(response) {
-       			$("#farmAnimallist").html(JSON.stringify(response));
+
+						var returnedItems = (response).data;
+						$("#farmAnimalOutput").empty();
+
+       			var animalDiv = $("<div class='farmAnimals'>");
+
+        		for (var i = 0; i < returnedItems.length; i++) {
+            var imgStill = returnedItems[i].images.fixed_height_still.url;
+            		imgStart = $("<img>").attr("src", imgStill);
+            		animalDiv.append(imgStart);
+        //     // var itemMoving = returnedItems[i].images.fixed_height.url;
+        	     	rated = returnedItems[i].rating;
+        	     	paraRating = $("<p>").text("Rating: " + rated);
+        	     	animalDiv.append(paraRating);
+       		 		// 	imageMoving = returnedItems[i].images.fixed_height.url;
+       		 		// 	image = $("<img>").attr("src", imageMoving);
+       		 		// 	animalDiv.append(image);
+       		 		// }
+       		 		$("#farmAnimalOutput").append(animalDiv);
+       		 	}
        	 });
        	}
 
