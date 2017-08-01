@@ -1,5 +1,21 @@
+* {
+	font-size: 20px;
+	font-family: 'Merriweather', serif;
+	display: inline-block;
+	margin: 10px, 20px, 10px, 20px;
+}
+title{
+	opacity: 0;
+}
+
 body {
 	background-image: url("../images/Invest_Farmland_md.jpg");
 	background-size: cover;
 }
+
+legend {
+	font-size: 40px;
+	font-family: 'Indie Flower', cursive;
+}
+
 
