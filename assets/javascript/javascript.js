@@ -30,6 +30,9 @@ $(document).ready(function() {
             			});
 
             		animalDiv.append(image);
+        	     	rated = returnedItems[i].rating;
+        	     	paraRating = $("<h4>").text("Rating: " + rated);
+        	     	animalDiv.append(paraRating);
        		 		 
        		 		$("#farmAnimalOutput").append(animalDiv);
 
