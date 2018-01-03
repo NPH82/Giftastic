@@ -18,4 +18,8 @@ legend {
 	font-family: 'Indie Flower', cursive;
 }
 
-
+footer {
+	background-color: red;
+	text-align: center;
+	color: white;
+}
