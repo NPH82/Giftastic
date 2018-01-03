@@ -15,7 +15,6 @@ $(document).ready(function() {
 
 						var returnedItems = (response).data;
 						$("#farmAnimalOutput").empty();
-						console.log(farmAnimal);
 
 						//create div for images
        			var animalDiv = $("<div class='farmImages'>");
@@ -31,9 +30,6 @@ $(document).ready(function() {
             			});
 
             		animalDiv.append(image);
-        	     	rated = returnedItems[i].rating;
-        	     	paraRating = $("<h4>").text("Rating: " + rated);
-        	     	animalDiv.append(paraRating);
        		 		 
        		 		$("#farmAnimalOutput").append(animalDiv);
 
