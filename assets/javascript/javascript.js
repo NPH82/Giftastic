@@ -15,6 +15,7 @@ $(document).ready(function() {
 
 						var returnedItems = (response).data;
 						$("#farmAnimalOutput").empty();
+						console.log(famAnimal);
 
 						//create div for images
        			var animalDiv = $("<div class='farmImages'>");
