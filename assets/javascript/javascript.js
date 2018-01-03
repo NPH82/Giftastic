@@ -30,6 +30,8 @@ $(document).ready(function() {
             			});
 
             		animalDiv.append(image);
+       		 		 
+       		 		$("#farmAnimalOutput").append(animalDiv);
 
        		 	}
        		 	pauseImage();
